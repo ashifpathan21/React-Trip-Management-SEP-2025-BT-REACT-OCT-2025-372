@@ -2,6 +2,10 @@
 
 This project is a React-based trip management application that allows users to view, add, edit, and delete trip information. It utilizes Redux for state management, React Router for navigation, and Tailwind CSS for styling.
 
+# Site link
+
+https://tripmanagementsystem.onrender.com
+
 ## Features
 
 - **Dashboard:** Displays trip statistics and graphs, providing an overview of trip data.
@@ -17,7 +21,6 @@ This project is a React-based trip management application that allows users to v
 ![Alt Text](./public/dashboard2.png)
 ![Alt Text](./public/addtrip.png)
 ![Alt Text](./public/edittrip.png)
-
 
 ## Technologies Used
 
