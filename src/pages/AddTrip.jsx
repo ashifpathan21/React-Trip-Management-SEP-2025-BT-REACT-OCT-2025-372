@@ -18,14 +18,12 @@ const AddTrip = () => {
     const id = uuidv4();
     data.id = id;
     dispatch(addTrip(data));
-    console.log("added")
     toast.success("Trip added successfully ");
     navigate("/");
   };
   return (
     <div className="min-h-screen w-screen ">
       <Navbar />
-
       <TripForm title={"Add Trip"} onSubmit={handleSubmit} />
     </div>
   );

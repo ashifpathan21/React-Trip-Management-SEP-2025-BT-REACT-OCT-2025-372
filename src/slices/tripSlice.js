@@ -23,9 +23,7 @@ const tripSlice = createSlice({
     },
     editTrip: (state, action) => {
       const { id, updated } = action.payload;
-      state.trips = state.trips.map((trip) =>
-        trip.id === id ? { ...trip, ...updated } : trip
-      );
+      state.trips = state.trips.map((trip) => (trip.id == id ? updated : trip));
       saveToLocalStorage(state.trips);
     },
     deleteTrip: (state, action) => {

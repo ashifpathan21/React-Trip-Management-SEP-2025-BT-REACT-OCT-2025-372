@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import TripForm from "../components/TripForm.jsx";
+import Navbar from "../components/Navbar.jsx";
+import { editTrip } from "../slices/tripSlice.js";
+import { toast } from "react-toastify";
 const EditTrip = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const param = useParams();
   const id = param.id;
-  console.log(id);
-  const  { trips } = useSelector((state) => state.trip) ;
+  const { trips } = useSelector((state) => state.trip);
   const [selectedTrip, setSelectedTrip] = useState(null);
   useEffect(() => {
-    console.log(trips);
     const selected = trips.filter((trip) => trip.id == id)[0];
-    console.log(selected);
     if (selected) {
-      console.log(selected);
       setSelectedTrip(selected);
     }
   }, [trips]);
@@ -33,7 +34,25 @@ const EditTrip = () => {
       </div>
     );
   }
-  return <div></div>;
+  const onSubmit = (updated) => {
+    if (!updated) {
+      return;
+    }
+    updated.id = id;
+    dispatch(editTrip({id, updated}));
+    toast.success("Edit Success");
+    navigate("/");
+  };
+  return (
+    <div>
+      <Navbar />
+      <TripForm
+        initialData={selectedTrip}
+        title="Edit Trip"
+        onSubmit={onSubmit}
+      />
+    </div>
+  );
 };
 
 export default EditTrip;
