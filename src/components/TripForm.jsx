@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Input from "./Input.jsx";
-import DropDown from "./DropDown.jsx";
+import DropDown from "./Dropdown.jsx";
 
 const TripForm = ({ initialData, onSubmit, title }) => {
   const [formData, setFormData] = useState({
