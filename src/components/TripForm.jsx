@@ -28,7 +28,7 @@ const TripForm = ({ initialData, onSubmit, title }) => {
     onSubmit(formData);
   };
   return (
-    <div className="mt-30  max-w-[500px] mx-auto rounded-2xl shadow-md shadow-indigo-500 border border-blue-300 ">
+    <div className="my-30  max-w-[500px] mx-auto rounded-2xl shadow-md shadow-indigo-500 border border-blue-300 ">
       <div className="bg-gradient-to-l rounded-lg from-indigo-600 via-blue-600 to-indigo-400 text-white font-bold flex justify-center items-center h-[100px] ">
         <h1 className="text-3xl overflow-hidden">{title}</h1>
       </div>

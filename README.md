@@ -12,6 +12,13 @@ This project is a React-based trip management application that allows users to v
 - **Form Validation:** Implements form validation to ensure data accuracy.
 - **Responsive Design:** Designed to be responsive and accessible on various devices.
 
+![Alt Text](./public/home.png)
+![Alt Text](./public/dashboard1.png)
+![Alt Text](./public/dashboard2.png)
+![Alt Text](./public/addtrip.png)
+![Alt Text](./public/edittrip.png)
+
+
 ## Technologies Used
 
 - React
@@ -59,22 +66,16 @@ This project is a React-based trip management application that allows users to v
 1.  Clone the repository:
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/ashifpathan21/React-Trip-Management-SEP-2025-BT-REACT-OCT-2025-372.git
     ```
 
-2.  Navigate to the project directory:
-
-    ```bash
-    cd <project-directory>
-    ```
-
-3.  Install dependencies:
+2.  Install dependencies:
 
     ```bash
     npm install
     ```
 
-4.  Start the development server:
+3.  Start the development server:
 
     ```bash
     npm run dev
