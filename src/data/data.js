@@ -1,4 +1,4 @@
-const trips = [
+export const tripsDummyData = [
   {
     id: 1,
     destination: "Paris",
