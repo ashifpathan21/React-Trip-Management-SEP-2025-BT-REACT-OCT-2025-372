@@ -22,7 +22,7 @@ const StatCard = ({ icon, title, data , color }) => {
         <h2 className="text-lg font-semibold text-indigo-800">{title}</h2>
       </div>
 
-      <div className="text-3xl font-bold text-indigo-950 tracking-wide">
+      <div className="text-3xl font-bold overflow-hidden text-indigo-950 tracking-wide">
         {data}
       </div>
     </div>

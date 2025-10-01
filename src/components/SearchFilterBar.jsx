@@ -7,12 +7,9 @@ const SearchFilterBar = ({
   status,
   statusOptions,
   setStatus,
-  dateSort,
-  setDateSort,
-  dateSortOptions,
-  priceSort,
-  priceSortOptions,
-  setPriceSort,
+ sort,
+ setSort ,
+ sortOptions
 }) => {
   return (
     <div className="pt-30 ">
@@ -21,7 +18,7 @@ const SearchFilterBar = ({
           <h2 className="w-full font-semibold text-xl ">Your Trips :</h2>
         </div>
 
-        <div className={"w-1/2"}>
+        <div className={"w-full  md:w-1/2 lg:w-1/2"}>
           <Input
             id={"searchBar"}
             placeholder={"Search your trip"}
@@ -44,19 +41,13 @@ const SearchFilterBar = ({
           placeholder="Select Status"
         />
         <Dropdown
-          id={"priceSort"}
-          label={"Price"}
-          options={priceSortOptions}
-          value={priceSort}
-          onChange={(e) => setPriceSort(e.target.value)}
+          id={"priceDateSort"}
+          label={"Price or Date "}
+          options={sortOptions}
+          value={sort}
+          onChange={(e) => setSort(e.target.value)}
         />
-        <Dropdown
-          id={"dateSort"}
-          label={"Date"}
-          options={dateSortOptions}
-          value={dateSort}
-          onChange={(e) => setDateSort(e.target.value)}
-        />
+      
       </div>
     </div>
   );

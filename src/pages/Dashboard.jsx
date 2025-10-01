@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { setTrip } from "../slices/tripSlice.js";
-import { tripsDummyData } from "../data/data.js";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../components/Navbar.jsx";
 import Welcome from "../components/Welcome.jsx";
@@ -35,10 +34,6 @@ const Dashboard = () => {
     const cancelled = trips.filter((trip) => trip.status === "CANCELLED");
     setCancelledTrips(cancelled);
   }, [trips]);
-
-  useEffect(() => {
-    dispatch(setTrip(tripsDummyData));
-  }, []);
 
   return (
     <div className="relative min-h-screen  ">
