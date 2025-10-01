@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard.jsx";
+import Home from "./pages/Home.jsx";
 
 const App = () => {
   return (
@@ -8,7 +9,8 @@ const App = () => {
      
       <div className="content inset-0 bg-transparent ">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </div>
