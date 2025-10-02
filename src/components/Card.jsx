@@ -47,13 +47,9 @@ const Card = ({ trip, idx }) => {
         <div className="flex items-center gap-5 ">
           <div className="flex flex-col gap-2 ">
             {/* Price */}
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center gap-2 text-lg font-semibold  text-emerald-700">
               <DollarSign className="w-4 h-4" />
-              {trip?.price?.toLocaleString("en-IN", {
-                style: "currency",
-                currency: "INR",
-                minimumFractionDigits: 0,
-              })}
+              {trip?.price}
             </div>
 
             {/* Status */}

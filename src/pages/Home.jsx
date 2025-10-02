@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar.jsx";
 import SearchFilterBar from "../components/SearchFilterBar.jsx";
+import Pagination from "../components/Pagination.jsx";
 import { setTrip } from "../slices/tripSlice.js";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ import Card from "../components/Card.jsx";
 const Home = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState("");
+  const [page, setPage] = useState(0);
   const [status, setStatus] = useState("ALL");
   const statusOptions = [
     { label: "All", value: "ALL" },
@@ -27,6 +29,11 @@ const Home = () => {
   const dispatch = useDispatch();
   const { trips } = useSelector((state) => state.trip);
   const [tripData, setTripData] = useState([]);
+  const [maxPage, setMaxPage] = useState(0);
+
+  useEffect(() => {
+    setMaxPage(Math.max(0, Math.ceil(tripData.length / 5) - 1));
+  }, [tripData]);
 
   useEffect(() => {
     let filtered = [...trips];
@@ -72,8 +79,12 @@ const Home = () => {
       />
 
       <div className="flex flex-col max-w-screen overflow-hidden items-start  gap-3 p-3 w-screen">
-        {tripData.length > 0 ? (
-          tripData.map((trip, idx) => <Card key={idx} trip={trip} idx={idx} />)
+        {tripData.slice(5 * page, 5 * page + 5).length > 0 ? (
+          tripData
+            .slice(5 * page, 5 * page + 5)
+            ?.map((trip, idx) => (
+              <Card key={idx} trip={trip} idx={5 * page + idx} />
+            ))
         ) : (
           <div className="flex flex-col gap-4 w-full  p-4 justify-center items-center">
             <h2 className="font-bold text-indigo-900  text-xl ">
@@ -89,6 +100,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <Pagination setPage={setPage} maxPage={maxPage} page={page} />
     </div>
   );
 };

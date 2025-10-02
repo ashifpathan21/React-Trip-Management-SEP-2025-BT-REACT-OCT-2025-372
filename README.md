@@ -17,6 +17,7 @@ https://tripmanagementsystem.onrender.com
 - **Responsive Design:** Designed to be responsive and accessible on various devices.
 
 ![Alt Text](./public/home.png)
+![Alt Text](./public/pagination.png)
 ![Alt Text](./public/dashboard1.png)
 ![Alt Text](./public/dashboard2.png)
 ![Alt Text](./public/addtrip.png)
